@@ -6,7 +6,7 @@
 /*   By: ruribeir <ruribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 12:08:09 by ruribeir          #+#    #+#             */
-/*   Updated: 2026/03/03 13:25:05 by ruribeir         ###   ########.fr       */
+/*   Updated: 2026/03/06 10:37:06 by ruribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*validate_input(int argc, char **argv)
 {
-	t_stack *stack_a;
+	t_stack	*stack_a;
 	int		i;
 	long	value;
 
@@ -22,7 +22,7 @@ t_stack	*validate_input(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if(!is_number(argv[i]))
+		if (!is_number(argv[i]))
 			exit_error();
 		value = ft_atoi_long(argv[i]);
 		stack_add_back(&stack_a, stack_new((int)value));
@@ -38,8 +38,8 @@ t_stack	*validate_input(int argc, char **argv)
 
 int	check_duplicates(t_stack *a)
 {
-	t_stack *current;
-	t_stack *check;
+	t_stack	*current;
+	t_stack	*check;
 
 	if (!a)
 		return (0);
@@ -55,12 +55,12 @@ int	check_duplicates(t_stack *a)
 		}
 		current = current->next;
 	}
-	return(0);
+	return (0);
 }
 
 int	is_number(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
@@ -73,13 +73,7 @@ int	is_number(char *str)
 			return (0);
 		i++;
 	}
-	return	(1);
-}
-
-void	exit_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
+	return (1);
 }
 
 long	ft_atoi_long(const char *str)
@@ -107,19 +101,4 @@ long	ft_atoi_long(const char *str)
 		i++;
 	}
 	return (res * sign);
-}
-
-void	free_stack(t_stack **stack)
-{
-	t_stack *tmp;
-
-	if (!stack || !*stack)
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	*stack = NULL;
 }

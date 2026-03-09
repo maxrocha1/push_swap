@@ -6,7 +6,7 @@
 /*   By: ruribeir <ruribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 11:57:02 by ruribeir          #+#    #+#             */
-/*   Updated: 2026/03/03 12:06:23 by ruribeir         ###   ########.fr       */
+/*   Updated: 2026/03/05 13:46:31 by ruribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,17 @@ int	stack_size(t_stack *stack)
 		stack = stack->next;
 	}
 	return (count);
+}
+
+bool	is_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (true);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
