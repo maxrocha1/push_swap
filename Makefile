@@ -15,7 +15,11 @@ SRC_FILES   = main.c \
               utils/disorder.c \
               algorithms/sort_simple.c \
               algorithms/sort_complex.c \
-              algorithms/turk_utils.c
+              algorithms/turk_utils.c \
+              operations/push.c \
+              operations/reverse_rotate.c \
+              operations/rotate.c \
+              operations/swap.c
 
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS        = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

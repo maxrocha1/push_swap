@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruribeir <ruribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmacari- <mmacari-@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 14:23:48 by ruribeir          #+#    #+#             */
-/*   Updated: 2026/03/06 10:45:44 by ruribeir         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:53:08 by mmacari-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	push_swap(t_stack **a, t_stack **b)
 
 	size = stack_size(*a);
 	if (size == 2 && !is_sorted(*a))
-		sa(a);
+		sa(*a);
 	else if (size == 3)
 		sort_three(a);
 	else if (size <= 5)

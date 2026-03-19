@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruribeir <ruribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmacari- <mmacari-@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 12:06:33 by ruribeir          #+#    #+#             */
-/*   Updated: 2026/03/06 10:43:45 by ruribeir         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:43:42 by mmacari-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,14 @@ t_stack	*stack_last(t_stack *stack);
 float	compute_disorder(t_stack *stack);
 bool	is_sorted(t_stack *stack);
 
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
+void	swap(t_stack *stack);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	push_stack(t_stack **from, t_stack **to);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+void	rotate(t_stack **stack);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
@@ -73,5 +76,7 @@ void	sort_three(t_stack **a);
 void	back_to_a(t_stack **a, t_stack **b);
 void	last_shift(t_stack **a);
 void	assign_index(t_stack *stack, int stack_size);
+
+/* OPERATIONS*/
 
 #endif

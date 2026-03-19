@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruribeir <ruribeir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmacari- <mmacari-@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 09:30:41 by ruribeir          #+#    #+#             */
-/*   Updated: 2026/03/06 10:37:43 by ruribeir         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:54:44 by mmacari-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void	sort_three(t_stack **a)
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
 	if (first > second && second < third && first < third)
-		sa(a);
+		sa(*a);
 	else if (first > second && second > third && first > third)
 	{
-		sa(a);
+		sa(*a);
 		rra(a);
 	}
 	else if (first > second && second < third && first > third)
 		ra(a);
 	else if (first < second && second > third && first < third)
 	{
-		sa(a);
+		sa(*a);
 		ra(a);
 	}
 	else if (first < second && second > third && first > third)
@@ -62,7 +62,7 @@ void	sort_simple(t_stack **a, t_stack **b)
 
 	size = stack_size(*a);
 	if (size == 2)
-		sa(a);
+		sa(*a);
 	else if (size == 3)
 		sort_three(a);
 	else if (size == 4 || size == 5)
